@@ -1,8 +1,8 @@
 ## Collectd Plugin for Slurm Monitoring
 
-This plugin delivers:
-  core allocations: allocated,idle,total for each node and the cluster
-  queue states: jobs running,pending,suspended,total
+This plugin delivers to collectd:
+  * core allocations: allocated,idle,total for each node and the cluster  
+  * queue states: jobs running,pending,suspended,total
 
 ### Install
 
@@ -27,4 +27,4 @@ copy slurmq.py to a location for collectd plugins:
 /usr/local/lib/Collectd/Plugins/
 ```
 
-If the this data gets relayed to another location or collectd server you may need to copy the slurmq_types.db file to that server and include it in the collectd config there. 
+If the this data gets relayed to another location or collectd server you may need to copy the slurmq_types.db file to that server and include it in the collectd config there.
