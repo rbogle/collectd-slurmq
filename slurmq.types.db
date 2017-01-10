@@ -1,0 +1,2 @@
+slurm_jobs    running:GAUGE:0:U, pending:GAUGE:0:U, suspended:GAUGE:0:U, total:GAUGE:0:U
+slurm_cores   allocated:GAUGE:0:U, idle:GAUGE:0:U, total:GAUGE:0:U
