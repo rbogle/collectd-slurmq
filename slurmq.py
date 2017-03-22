@@ -5,7 +5,7 @@ import pyslurm
 import time
 
 # removed interval for compat with collectd default.
-#INTERVAL=30 # seconds
+INTERVAL=10 # seconds
 
 # Query queue for running,pending,suspended,total jobs in queue
 def get_queue_counts():
@@ -43,8 +43,8 @@ def read_callback(data=None):
         metric = collectd.Values()
         metric.plugin = 'slurmq'
         metric.type = 'slurm_jobs'
-        # metric.time = now
-        # metric.interval = INTERVAL
+        metric.time = now
+        metric.interval = INTERVAL
         metric.values = queue
         metric.dispatch()
 
@@ -56,8 +56,8 @@ def read_callback(data=None):
          metric.plugin = 'slurmq'
          metric.type = 'slurm_cores'
          metric.type_instance = key
-         # metric.time = now
-         # metric.interval = INTERVAL
+         metric.time = now
+         metric.interval = INTERVAL
          metric.values = cores[key]
          metric.dispatch()
 
@@ -72,4 +72,4 @@ if __name__ == '__main__':
 else:
     import collectd
     # Register the callback
-    collectd.register_read(read_callback)
+    collectd.register_read(read_callback, INTERVAL)
